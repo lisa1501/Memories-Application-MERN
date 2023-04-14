@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 
 import useStyles from './styles';
 import { createPost, updatePost } from '../../actions/posts'
-
+import ReactImageFileToBase64 from "react-file-image-to-base64";
 // Get the current post id
 
 const Form = ({currentId, setCurrentId }) => {
@@ -86,11 +86,11 @@ const Form = ({currentId, setCurrentId }) => {
                     onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })}
                 />
                 <div className={classes.fileInput}>
-                    <FileBase
-                        type="file"
-                        multiple={false}
-                        onDone={({base64}) => setPostData({ ...postData, selectedFile: base64 })}
-                        />
+                <FileBase 
+                type="file"
+                multiple={false}
+                onDone={({base64}) => setPostData({ ...postData, selectedFile: base64})}
+            />
                 </div>
                 <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>
                     Create

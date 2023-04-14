@@ -5,6 +5,7 @@ import {GoogleLogin, GoogleOAuthProvider} from '@react-oauth/google'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
+import Alert from "@mui/material/Alert"
 
 import useStyles from './styles';
 import Input from './Input';
@@ -86,6 +87,9 @@ const Auth = () => {
                     <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
                         {isSignup ? 'Sign Up' :' Sign In'}
                     </Button>
+                    <Alert message="success">
+                            Email: test@example.com , Password: password
+                    </Alert>
 
                     <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
                         <GoogleLogin 
@@ -101,6 +105,7 @@ const Auth = () => {
                                 { isSignup ? 'Already have an account? Sign In' : "Don't have an account? Sign Up"}
                             </Button>
                         </Grid>
+                        
 
                     </Grid>
                 </form>
