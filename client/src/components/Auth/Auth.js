@@ -88,7 +88,8 @@ const Auth = () => {
                         {isSignup ? 'Sign Up' :' Sign In'}
                     </Button>
                     <Alert message="success">
-                            Email: test@example.com , Password: password
+                            <li>Email: test@example.com </li>
+                            <li>Password: password</li>
                     </Alert>
 
                     <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
