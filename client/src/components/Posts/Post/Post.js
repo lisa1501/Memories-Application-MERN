@@ -45,8 +45,9 @@ const Post = ({ post, setCurrentId }) => {
         
             return <><ThumbUpAltOutlined fontSize="small" />&nbsp;Like</>;
         };
+    console.log(user?.result?.sub)
 
-    const openPost = () => history.push(`/posts/${post._id}`);
+    const openPost = () => user ? history.push(`/posts/${post._id}`) :history.push('/auth');
 
     return (
         <Card className={classes.card} raised elevation={6}>
@@ -55,7 +56,7 @@ const Post = ({ post, setCurrentId }) => {
             || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'}  title={post.title}/>
             <div className={classes.overlay}>
                 <Typography variant='h6'>{post.name}</Typography>
-                <Typography variant='body2'>{moment(post.createAt).fromNow()}</Typography>
+                <Typography variant='body2'>{moment(post.createdAt).fromNow()}</Typography>
             </div>
             {(user?.result?.sub === post?.creator ||user?.result?._id === post?.creator) && (
             <div className={classes.overlay2} name="edit">
