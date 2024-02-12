@@ -21,14 +21,16 @@ const CommentSection = ({ post }) => {
         setComments(newComment);
         setComment('');
 
-        commentsRef.current.scrollBy({  behavior: 'smooth' });
+        commentsRef.current.scrollIntoView({ behavior: "smooth",
+        block: "nearest",
+        inline: "start" });
 
     }
 
     return (
         <div>
-            <div className={classes.commentsOuterCoantainer}>
-                <div className={classes.commestInnerContainer}>
+            <div className={classes.commentsOuterContainer}>
+                <div className={classes.commentsInnerContainer}>
                     <Typography gutterBottom variant="h6">Comments</Typography>
                         {comments.map((c, i) =>(
                             <Typography key={i} gutterBottom variant="subtitle1">

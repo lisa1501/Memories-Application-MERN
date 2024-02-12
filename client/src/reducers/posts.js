@@ -16,12 +16,12 @@ export default (state = { isLoading: true, posts: [] }, action) =>{
         case LIKE:
             return { ...state, posts:state.posts.map((post) => post._id === action.payload._id ? action.payload : post)};
         
-            case COMMENT:
+        case COMMENT:
             return {
                 ... state, 
                 posts:state.posts.map((post) => {
                     // change the post that just received a commnet
-                    if(post._id === action.payload._di ){
+                    if(post._id === action.payload._id ){
                         return action.payload
                     }
                     //  return all the other posts normally

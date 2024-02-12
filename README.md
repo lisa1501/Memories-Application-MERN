@@ -1,3 +1,11 @@
+# Memories (MERN Stack) 
+## Description
+● Developed a fully responsive social media application that provides users two ways to log in using a Google account or by creating a real account, with complete search and filtering functionality, users can query for a tag or a memory title to get all the related memories
+● Implemented CRUD, pagination, and comments features. Client-side routing a memory platform to get more information with recommended memories section
+<br>
+
+[Click here to see it in action!](https://halisa-my-memories-apps.netlify.app)
+<br>
 ## Installation
 
 - `git clone <this_url> && cd <repo_name>`
@@ -23,3 +31,8 @@ REACT_APP_GOOGLE_CLIENT_ID=
 REACT_APP_SERVER_URL=http://localhost:8080
 ```
 ## 
+
+## 
+
+![image]()
+
